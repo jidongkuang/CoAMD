@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Multi-Modal Action Recognizer Bridges Human Motion Generation and Understanding</title>
+  <link rel="icon" type="image/x-icon" href="">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+  <style>
+  .tldr {
+    font-size: 0.9em;          /* 比正文略大，温和突出 */
+    font-weight: bold;         /* 加粗标题部分 */
+    color: #33333389;            /* 深灰色，稳重且专业 */
+    font-style: italic;        /* 斜体正文，区分正文 */
+  }
+</style>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Multi-Modal Action Recognizer Bridges Human Motion Generation and Understanding</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                 </span>
+
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"> </span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="static/pdfs/Paper_ReAlign Text-to-Motion Generation via Step-Aware Reward-Guided Alignment.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/Supplementary_ReAlign Text-to-Motion Generation via Step-Aware Reward-Guided Alignment.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .has-text-justified {
+    text-align: justify;
+  }
+</style>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <!-- 第一块内容：TL;DR（行内加粗） -->
+        <div class="box has-background-white-ter mb-5 p-5">
+          <p class="has-text-justified">
+            <strong>TL;DR:</strong> We propose CoAMD, a skeleton-based autoregressive diffusion model that unifies action recognition and motion generation through semantic guidance. It achieves state-of-the-art results on 13 benchmarks across recognition, text-to-motion, retrieval, and editing tasks.
+          </p>
+        </div>
+
+        <!-- 第二块内容：主体段落 -->
+        <div class="box has-background-white-ter p-5">
+          <p class="has-text-justified">
+            Human action recognition and motion generation are two active research problems in human-centric computer vision, both aiming to align motion with textual semantics. However, most existing works study these two problems separately, without uncovering the bidirectional links between them, namely that motion generation requires semantic comprehension. This work investigates unified action recognition and motion generation by leveraging skeleton coordinates for both motion understanding and generation. We propose Coordinates-based Autoregressive Motion Diffusion (CoAMD), which synthesizes motion in a coarse-to-fine manner. As a core component of CoAMD, we design a Multi-modal Action Recognizer (MAR) that provides semantic guidance for motion generation. Our model can be applied to four important tasks, including skeleton-based action recognition, text-to-motion generation, text–motion retrieval, and motion editing. Extensive experiments on 13 benchmarks across these tasks demonstrate that our approach achieves state-of-the-art performance, highlighting its effectiveness and versatility for human motion modeling.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<style>.two-image-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-row {
+  width: 90%;
+  text-align: center;
+  margin-bottom: 20px; /* 可根据需要调整间距 */
+}
+.caption {
+  width: 100%;
+  text-align: center;
+}
+.three-image-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#results-container {
+  display: block;
+}
+
+.item {
+  margin-bottom: 50px; /* 根据需要调整每个项目之间的间距 */
+}
+
+.image-row {
+  width: 90%;
+  margin: 0 auto 20px auto; /* 图片水平居中，设置上下间距 */
+  text-align: center;
+}
+.item {
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  padding: 20px;
+  margin-bottom: 50px;
+  background-color: #fff;
+}
+
+.image-row {
+  width: 90%;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+
+.caption {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.top-caption h2 {
+  font-size: 1.3em !important;
+  font-weight: bold !important;
+  font-style: italic !important;
+}
+
+.image-row img[src*="kit.jpg"],
+.image-row img[src*="plug.jpg"] {
+  width: 50%;
+  height: auto;
+}
+.half-scale .image-row img {
+  width: 50%;
+  height: auto;
+}
+
+.half-scale .caption {
+  width: 50%;
+  margin: 0 auto; /* 使 caption 居中 */
+}
+/* 保持垂直排列的 item 样式 */
+#results-container .item {
+  margin-bottom: 50px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* 图片和 caption 样式 */
+.image-row {
+  width: 90%;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+
+.caption {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* top-caption 独特样式 */
+.top-caption h2 {
+  font-size: 2em !important;
+  font-weight: bold !important;
+  font-style: italic !important;
+}
+
+/* 水平滑动容器 */
+#horizontal-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  padding: 20px 0;
+}
+
+/* 单个滑动项 */
+#horizontal-slider .slider-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 300px;  /* 根据需要调整宽度 */
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  padding: 20px;
+  background-color: #fff;
+}
+
+.justify-text {
+  text-align: justify !important;
+}
+
+</style>
+
+
+<!-- Image carousel -->
+<!-- Image vertical layout: one image per row -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-container">
+
+        <div class="item">
+          <div class="caption top-caption">
+            <h2 class="subtitle has-text-centered">
+              CoAMD Framework: Recognizer-Guided Motion Generation
+            </h2>
+          </div>
+          <div class="image-row">
+            <img src="static/images/intro.jpg" alt="Image 5"/>
+          </div>
+          <h2 class="subtitle has-text-centered" style="text-align: justify;">
+            Our framework operates in an iterative loop where a Generator synthesizes a portion of the motion, and a Recognizer facilitates its semantic alignment with the text. The recognizer’s feedback guides the generator’s next step, progressively refining the motion to match complex descriptions.
+          </h2>
+
+        </div>
+
+        <div class="item">
+          <div class="caption top-caption">
+            <h2 class="subtitle has-text-centered">
+              CoAMD Architecture with Motion Generation and Semantic Alignment
+            </h2>
+          </div>
+          <div class="image-row">
+            <img src="static/images/sampling.jpg" alt="Image 5"/>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            <p>
+              An overview of the CoAMD architecture. (a) The main generative model, which uses a Motion Encoder-Decoder (AE) to map multi-modal inputs into a latent space. A Masked Autoregressive Transformer then processes this latent sequence, with a Diffusion model responsible for filling in the masked tokens. (b) The semantic guidance mechanism during sampling. The MAR computes a semantic alignment score from the decoded motion, and the gradient of this score is used to refine the latent prediction from the diffusion model, ensuring better alignment with the text.
+            </p>
+          </h2>
+        </div>
+
+
+
+        <div class="item">
+          <div class="caption top-caption">
+            <h2 class="subtitle has-text-centered">
+              More visual comparison of text to motion generation results.
+            </h2>
+          </div>
+          <div class="image-row">
+            <img src="static/images/visual.jpg" alt="Image 5"/>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Visual comparison of motion generation results on the HumanML3D dataset. Our proposed xxxxxxxxxxxx
+          </h2>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- 添加统一标题 -->
+      <h1 class="title has-text-centered justify-top" style="font-size:2em; font-weight:bold; font-style:italic;">
+        Main Results
+      </h1>
+
+
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <div class="caption top-caption">
+            <h2 class="subtitle has-text-centered">
+              Comparison of text-to-motion generation performance on the HumanML3D dataset
+            </h2>
+          </div>
+          <div class="image-row">
+            <img src="static/images/h3d.jpg" alt="Image 5"/>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Comparison of text-to-motion generation performance on the HumanML3D dataset. Percentages in subscripts indicate improvements over respective baselines.
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="caption top-caption">
+            <h2 class="subtitle has-text-centered">
+              Comparison of text-to-motion generation performance on the KIT-ML dataset
+            </h2>
+          </div>
+          <div class="image-row">
+            <img src="static/images/kit.jpg" alt="Image 5"/>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Comparison of text-to-motion generation performance on the KIT-ML dataset. Since the models MLD and MLD++ for the KIT-ML dataset have not been released, we use the widely used MDM as the baseline.
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="caption top-caption">
+            <h2 class="subtitle has-text-centered">
+              Plug-and-Play Functionality of ReAlign
+            </h2>
+          </div>
+          <div class="image-row">
+            <img src="static/images/plug.jpg" alt="Image 5"/>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Performance enhancement of motion generation methods with plug-and-play step-aware reward guidance. Results are evaluated on the HumanML3D dataset, with improvements reported relative to baseline methods. Here, MLCM<sup>1</sup> and MLCM<sup>4</sup> denote the 1-step and 4-step model in MotionLCM. MDiff is an abbreviation of MotionDiffuse.
+          </h2>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .video-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* 可选：设置间距 */
+  }
+  .video-list .item {
+    width: calc(50% - 10px); /* 两个视频之间的间距需要计算进去 */
+    box-sizing: border-box;
+  }
+</style>
+
+
+<!--<section class="hero is-small">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <h2 class="title is-3">Visualizations on Text to Motion</h2>-->
+<!--      <div class="video-list">-->
+<!--        <div class="item item-video5">-->
+<!--          <video poster="" id="video5" autoplay controls muted loop>-->
+<!--            <source src="static/videos/EN/EN_5.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video6">-->
+<!--          <video poster="" id="video6" autoplay controls muted loop>-->
+<!--            <source src="static/videos/EN/EN_6.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video7">-->
+<!--          <video poster="" id="video7" autoplay controls muted loop>-->
+<!--            <source src="static/videos/EN/EN_7.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video8">-->
+<!--          <video poster="" id="video8" autoplay controls muted loop>-->
+<!--            <source src="static/videos/EN/EN_8.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video9">-->
+<!--          <video poster="" id="video9" autoplay controls muted loop>-->
+<!--            <source src="static/videos/EN/EN_1.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video10">-->
+<!--          <video poster="" id="video10" autoplay controls muted loop>-->
+<!--            <source src="static/videos/EN/EN_2.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video11">-->
+<!--          <video poster="" id="video11" autoplay controls muted loop>-->
+<!--            <source src="static/videos/EN/EN_3.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video11">-->
+<!--          <video poster="" id="video13" autoplay controls muted loop>-->
+<!--            <source src="static/videos/EN/EN_9.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video11">-->
+<!--          <video poster="" id="video14" autoplay controls muted loop>-->
+<!--            <source src="static/videos/EN/EN_10.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--        <div class="item item-video12">-->
+<!--          <video poster="" id="video12" autoplay controls muted loop>-->
+<!--            <source src="static/videos/EN/EN_4.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the Academic Project Page Template</a> which was adopted from the  Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+  </body>
+  </html>
