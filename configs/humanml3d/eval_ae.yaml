@@ -1,0 +1,8 @@
+dataset_dir: ./datasets
+dataset_name: t2m
+save_dir: outputs/eval_ae/humanml3d
+ae_checkpoint: pretrained/ae/latest.tar
+cuda: 0
+seed: 0
+num_workers: 4
+repeat_time: 10

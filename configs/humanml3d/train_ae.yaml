@@ -1,0 +1,16 @@
+dataset_dir: ./datasets
+dataset_name: t2m
+output_dir: outputs/train_ae/humanml3d
+cuda: 0
+batch_size: 256
+window_size: 64
+epoch: 50
+warm_up_iter: 1000
+lr: 0.0002
+milestones: [150000, 250000]
+lr_decay: 0.05
+weight_decay: 0.0
+recons_loss: l1_smooth
+seed: 0
+num_workers: 4
+log_every: 100
