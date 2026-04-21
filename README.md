@@ -131,10 +131,13 @@ This project builds on several excellent motion-generation and motion-understand
 Please update the citation block below with the final arXiv metadata before the public release.
 
 ```bibtex
-@article{coamd2026,
-  title={Multi-Modal Action Recognizer Bridges Human Motion Generation and Understanding},
-  author={To be updated},
-  journal={arXiv preprint},
-  year={2026}
+@misc{kuang2026marryingtexttomotiongenerationskeletonbased,
+      title={Marrying Text-to-Motion Generation with Skeleton-Based Action Recognition}, 
+      author={Jidong Kuang and Hongsong Wang and Jie Gui},
+      year={2026},
+      eprint={2604.17090},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2604.17090}, 
 }
 ```
