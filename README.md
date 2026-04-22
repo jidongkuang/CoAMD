@@ -1,6 +1,6 @@
-# CoAMD: Multi-Modal Action Recognizer Bridges Human Motion Generation and Understanding
+# Marrying Text-to-Motion Generation with Skeleton-Based Action Recognition
 
-This repository is a cleaned, GitHub-ready code release for the main CoAMD experiments in our paper *Multi-Modal Action Recognizer Bridges Human Motion Generation and Understanding*.
+This repository is a cleaned, GitHub-ready code release for the main CoAMD experiments in our paper *Marrying Text-to-Motion Generation with Skeleton-Based Action Recognition*.
 
 The release focuses on the core HumanML3D pipeline used in our paper:
 
