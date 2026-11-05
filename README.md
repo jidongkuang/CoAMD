@@ -1,5 +1,7 @@
 # Marrying Text-to-Motion Generation with Skeleton-Based Action Recognition
 
+[![Project Page](https://img.shields.io/badge/Project-Page-0b70ad.svg?style=flat&logo=googlechrome&logoColor=white)](https://jidongkuang.github.io/projects/CoAMD/)
+
 This repository is a cleaned, GitHub-ready code release for the main CoAMD experiments in our paper *Marrying Text-to-Motion Generation with Skeleton-Based Action Recognition*.
 
 The release focuses on the core HumanML3D pipeline used in our paper:
