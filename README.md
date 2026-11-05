@@ -1,6 +1,30 @@
-# Marrying Text-to-Motion Generation with Skeleton-Based Action Recognition
+<div align="center">
 
-[![Project Page](https://img.shields.io/badge/Project-Page-0b70ad.svg?style=flat&logo=googlechrome&logoColor=white)](https://jidongkuang.github.io/projects/CoAMD/)
+<h1>Marrying Text-to-Motion Generation<br>with Skeleton-Based Action Recognition</h1>
+
+<p>
+  Jidong Kuang &nbsp;&middot;&nbsp; Hongsong Wang<sup>*</sup> &nbsp;&middot;&nbsp; Jie Gui<sup>*</sup>
+  &nbsp;&middot;&nbsp; Yuan Yan Tang &nbsp;&middot;&nbsp; James Tin-Yau Kwok
+  <br>
+  Southeast University &nbsp;&middot;&nbsp; University of Macau &nbsp;&middot;&nbsp; UOW College Hong Kong &nbsp;&middot;&nbsp; HKUST
+  <br>
+  <sup>*</sup>Corresponding authors
+</p>
+
+<p>
+  <a href="https://jidongkuang.github.io/projects/CoAMD/">
+    <img src="https://img.shields.io/badge/Project-Page-0b70ad.svg?style=flat&logo=googlechrome&logoColor=white" alt="Project Page">
+  </a>
+  <a href="https://arxiv.org/abs/2604.17090">
+    <img src="https://img.shields.io/badge/arXiv-2604.17090-b31b1b.svg?logo=arxiv" alt="arXiv">
+  </a>
+  <a href="https://github.com/jidongkuang/CoAMD">
+    <img src="https://img.shields.io/badge/Code-GitHub-181717.svg?style=flat&logo=github&logoColor=white" alt="Code on GitHub">
+  </a>
+  <img src="https://img.shields.io/github/stars/jidongkuang/CoAMD?style=flat" alt="GitHub stars">
+</p>
+
+</div>
 
 This repository is a cleaned, GitHub-ready code release for the main CoAMD experiments in our paper *Marrying Text-to-Motion Generation with Skeleton-Based Action Recognition*.
 
@@ -14,7 +38,18 @@ The release focuses on the core HumanML3D pipeline used in our paper:
 
 Compared with the original research workspace, this folder is reorganized into a standalone repository layout with cleaner module boundaries, config files, and preparation scripts.
 
-## Repository Layout
+---
+
+## 📑 Table of Contents
+
+- [🗂️ Repository Layout](#️-repository-layout)
+- [⚙️ Setup](#️-setup)
+- [🚀 Quick Start](#-quick-start)
+- [📌 Notes](#-notes)
+- [🙏 Acknowledgements](#-acknowledgements)
+- [📝 Citation](#-citation)
+
+## 🗂️ Repository Layout
 
 ```text
 CoAMD/
@@ -35,7 +70,7 @@ CoAMD/
 └── README.md
 ```
 
-## Setup
+## ⚙️ Setup
 
 ### 1. Create the environment
 
@@ -86,7 +121,7 @@ pretrained/
 
 Update the YAML configs or CLI flags if your checkpoints are stored elsewhere.
 
-## Quick Start
+## 🚀 Quick Start
 
 ### Train AE
 
@@ -118,17 +153,17 @@ python -m train.train_coamd --config configs/humanml3d/train_coamd.yaml
 python -m eval.eval_coamd_guided --config configs/humanml3d/eval_coamd_guided.yaml
 ```
 
-## Notes
+## 📌 Notes
 
 - This release is intentionally centered on the main HumanML3D experiments used in the paper.
 - Several research-only artifacts from the original workspace, such as ad-hoc prompt files, logs, notebooks, and temporary visualization scripts, were removed.
 - The codebase is reorganized relative to the original MARDM-based prototype to make the public release easier to navigate and extend.
 
-## Acknowledgements
+## 🙏 Acknowledgements
 
 This project builds on several excellent motion-generation and motion-understanding codebases, especially MARDM and the broader HumanML3D evaluation ecosystem. Please also credit the original upstream projects when appropriate.
 
-## Citation
+## 📝 Citation
 
 Please update the citation block below with the final arXiv metadata before the public release.
 
